@@ -17,4 +17,4 @@
 */
 
 pub mod functions;
-
+pub mod errors;

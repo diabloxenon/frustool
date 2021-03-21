@@ -17,12 +17,15 @@
 */
 
 pub mod trig;
+pub mod vector;
 
 use cpython::{py_fn, py_module_initializer};
 use trig::{
     acos_py, acosh_py, asin_py, asinh_py, atan_py, atanh_py, cos_py, cosh_py, sin_py, sinh_py,
     tan_py, tanh_py,
 };
+
+use vector::{add_py, sub_py, div_py, mul_py};
 
 py_module_initializer!(libfrustool, |py, m| {
     m.add(
@@ -42,5 +45,11 @@ py_module_initializer!(libfrustool, |py, m| {
     m.add(py, "asinh", py_fn!(py, asinh_py(input: f64)))?;
     m.add(py, "acosh", py_fn!(py, acosh_py(input: f64)))?;
     m.add(py, "atanh", py_fn!(py, atanh_py(input: f64)))?;
+    // Vector Operations
+    m.add(py, "add", py_fn!(py, add_py(vector1: Vec<f64>, vector2: Vec<f64>)))?;
+    m.add(py, "sub", py_fn!(py, sub_py(vector1: Vec<f64>, vector2: Vec<f64>)))?;
+    m.add(py, "mul", py_fn!(py, mul_py(vector1: Vec<f64>, vector2: Vec<f64>)))?;
+    m.add(py, "div", py_fn!(py, div_py(vector1: Vec<f64>, vector2: Vec<f64>)))?;
+
     Ok(())
 });
