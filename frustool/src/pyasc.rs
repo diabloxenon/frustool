@@ -16,7 +16,7 @@
  * limitations under the License.
 */
 
-use super::functions::transform::{
+use super::functions::basic::{
     acos_py, acosh_py, asin_py, asinh_py, atan_py, atanh_py, ceil_py, cos_py, cosh_py, exp_py,
     floor_py, ln_py, log10_py, log2_py, rad2deg_py, sin_py, sinh_py, sqrt_py, tan_py, tanh_py,
 };

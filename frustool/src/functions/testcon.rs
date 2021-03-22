@@ -1,5 +1,5 @@
 /*
- * frustool.rs - Financial analysis made easy for Python and Rust.
+ * testcon.rs - Testing metrics and constants for frustool <INCLUDED IN EVERY SUBMODULE>.
  *
  * Copyright 2020-2021 Naman Bishnoi
  *
@@ -15,9 +15,3 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-
-pub mod errors;
-pub mod functions;
-pub mod metrics;
-mod pyasc;
-pub mod statistics;
