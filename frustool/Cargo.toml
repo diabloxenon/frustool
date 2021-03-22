@@ -4,11 +4,9 @@ version = "0.1.0"
 authors = ["Xenon Lucifer Diablo <code@nmnx.org>"]
 edition = "2018"
 description = "Financial Analysis tool for Rust and Python"
-readme = "README.md"
 homepage = "https://nmnx.org/dev/frustool"
 repository = "https://github.com/diabloxenon/frustool/"
 license = "Apache-2.0"
-license-file = "LICENSE"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
