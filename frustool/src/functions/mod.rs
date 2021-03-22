@@ -16,40 +16,6 @@
  * limitations under the License.
 */
 
-pub mod trig;
+pub mod transform;
 pub mod vector;
 
-use cpython::{py_fn, py_module_initializer};
-use trig::{
-    acos_py, acosh_py, asin_py, asinh_py, atan_py, atanh_py, cos_py, cosh_py, sin_py, sinh_py,
-    tan_py, tanh_py,
-};
-
-use vector::{add_py, sub_py, div_py, mul_py};
-
-py_module_initializer!(libfrustool, |py, m| {
-    m.add(
-        py,
-        "__doc__",
-        "This is Frustool, A Financial analyzer for python",
-    )?;
-    m.add(py, "sin", py_fn!(py, sin_py(input: f64)))?;
-    m.add(py, "cos", py_fn!(py, cos_py(input: f64)))?;
-    m.add(py, "tan", py_fn!(py, tan_py(input: f64)))?;
-    m.add(py, "sinh", py_fn!(py, sinh_py(input: f64)))?;
-    m.add(py, "cosh", py_fn!(py, cosh_py(input: f64)))?;
-    m.add(py, "tanh", py_fn!(py, tanh_py(input: f64)))?;
-    m.add(py, "asin", py_fn!(py, asin_py(input: f64)))?;
-    m.add(py, "acos", py_fn!(py, acos_py(input: f64)))?;
-    m.add(py, "atan", py_fn!(py, atan_py(input: f64)))?;
-    m.add(py, "asinh", py_fn!(py, asinh_py(input: f64)))?;
-    m.add(py, "acosh", py_fn!(py, acosh_py(input: f64)))?;
-    m.add(py, "atanh", py_fn!(py, atanh_py(input: f64)))?;
-    // Vector Operations
-    m.add(py, "add", py_fn!(py, add_py(vector1: Vec<f64>, vector2: Vec<f64>)))?;
-    m.add(py, "sub", py_fn!(py, sub_py(vector1: Vec<f64>, vector2: Vec<f64>)))?;
-    m.add(py, "mul", py_fn!(py, mul_py(vector1: Vec<f64>, vector2: Vec<f64>)))?;
-    m.add(py, "div", py_fn!(py, div_py(vector1: Vec<f64>, vector2: Vec<f64>)))?;
-
-    Ok(())
-});
